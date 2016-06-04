@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3fA-Ie-bex">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="40O-mb-FpZ">
+            <objects>
+                <tableViewController id="3fA-Ie-bex" customClass="ViewController" customModule="DynamicHeightTableCells" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BS9-Zr-jmi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="kittenCell" rowHeight="100" id="Qlf-fw-EOx" customClass="KittenCell" customModule="DynamicHeightTableCells" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qlf-fw-EOx" id="gDM-RX-L70">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kitten" translatesAutoresizingMaskIntoConstraints="NO" id="5co-EP-IQB">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spD-ed-DGg">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" priority="750" constant="100" id="XdY-uW-dkM"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="kittenTapped:" destination="Qlf-fw-EOx" eventType="touchUpInside" id="m6R-l4-oOC"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="spD-ed-DGg" firstAttribute="top" secondItem="gDM-RX-L70" secondAttribute="top" priority="750" id="Gmc-E6-9eF"/>
+                                        <constraint firstAttribute="trailing" secondItem="5co-EP-IQB" secondAttribute="trailing" id="agB-e3-TNJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="spD-ed-DGg" secondAttribute="bottom" priority="750" id="bGe-Or-HjM"/>
+                                        <constraint firstItem="5co-EP-IQB" firstAttribute="top" secondItem="gDM-RX-L70" secondAttribute="top" id="dwR-Q7-brJ"/>
+                                        <constraint firstItem="5co-EP-IQB" firstAttribute="leading" secondItem="gDM-RX-L70" secondAttribute="leading" id="ess-VP-pNg"/>
+                                        <constraint firstItem="spD-ed-DGg" firstAttribute="leading" secondItem="gDM-RX-L70" secondAttribute="leading" priority="750" id="rIX-hQ-wFA"/>
+                                        <constraint firstAttribute="trailing" secondItem="spD-ed-DGg" secondAttribute="trailing" priority="750" id="sOS-cD-R7D"/>
+                                        <constraint firstAttribute="bottom" secondItem="5co-EP-IQB" secondAttribute="bottom" id="uO3-aC-TVN"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="heightConstraint" destination="XdY-uW-dkM" id="Ivb-Qy-tYw"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="textCell" rowHeight="50" id="6fi-RS-HI8" customClass="TextCell" customModule="DynamicHeightTableCells" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="128" width="600" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6fi-RS-HI8" id="oVi-lm-8tD">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SxI-jk-bmr">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="6fi-RS-HI8" id="Aiv-mx-tg3"/>
+                                            </connections>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="SxI-jk-bmr" secondAttribute="trailing" id="0VM-c8-odD"/>
+                                        <constraint firstItem="SxI-jk-bmr" firstAttribute="leading" secondItem="oVi-lm-8tD" secondAttribute="leading" id="0qK-Gg-RTi"/>
+                                        <constraint firstItem="SxI-jk-bmr" firstAttribute="top" secondItem="oVi-lm-8tD" secondAttribute="top" id="6RP-IA-5Ld"/>
+                                        <constraint firstAttribute="bottom" secondItem="SxI-jk-bmr" secondAttribute="bottom" id="fVl-bX-Hgg"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textView" destination="SxI-jk-bmr" id="Hvh-A3-uoH"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3fA-Ie-bex" id="qIM-pd-b0z"/>
+                            <outlet property="delegate" destination="3fA-Ie-bex" id="OSI-w9-QwP"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAi-gD-iUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-278" y="222"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="kitten" width="1200" height="1200"/>
+    </resources>
+</document>
